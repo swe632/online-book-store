@@ -34,6 +34,7 @@ export class CartComponent {
 
   checkout() {
     this.cart = [];
+    this.totalPrice = 0;
     this.showMessage = true;
     this.message = 'Thank you for shopping.';
 
