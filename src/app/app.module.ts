@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
+import { HomeBookComponent } from './home-book/home-book.component';
+import { CartComponent } from './cart/cart.component';
+
 
 
 @NgModule({
@@ -13,6 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     NavbarComponent,
     FooterComponent
+    HomeBookComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
