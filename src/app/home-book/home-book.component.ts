@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { Book } from '../models/book.model';
 import { CartService } from '../service/cart.service';
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-book',
   templateUrl: './home-book.component.html',
-  styleUrls: ['./home-book.component.css']
+  styleUrls: ['./home-book.component.css'],
 })
 export class HomeBookComponent {
-  constructor(private cartService: CartService) { }
+  
   message: string = '';
   showMessage: boolean = false;
+  
+  constructor(private cartService: CartService, private router: Router) {}
+  
+
   addToCart(book: Book): void {
     this.cartService.addToCart(book);
     this.showMessage = true;
@@ -25,7 +28,6 @@ export class HomeBookComponent {
 
     console.log(book);
   }
-
 
   books: Book[] = [
     {
@@ -102,11 +104,7 @@ export class HomeBookComponent {
     // Add more books up to id 25
   ];
 
- 
-
-
-
- 
- 
-
+  viewProductDetails(id: number) {
+    this.router.navigateByUrl('/product/' + id);
+  }
 }
