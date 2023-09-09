@@ -6,6 +6,7 @@
           <th>Title</th>
           <th>Author</th>
           <th>Price</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -13,8 +14,11 @@
           <td>{{ book.title }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.price  }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeFromCart(book)">Remove</button>
+          </td>
         </tr>
       </tbody>
     </table>
-    
+    <p>Total Price: {{ totalPrice | currency }}</p>
   </div>
