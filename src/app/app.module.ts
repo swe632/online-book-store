@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeBookComponent } from './home-book/home-book.component';
 import { CartComponent } from './cart/cart.component';
+import { ReqBookComponent } from './req-book/req-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,12 +19,14 @@ import { CartComponent } from './cart/cart.component';
     NavbarComponent,
     FooterComponent,
     HomeBookComponent,
-    CartComponent
+    CartComponent,
+    ReqBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
