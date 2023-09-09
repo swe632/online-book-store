@@ -4,20 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatIconModule} from '@angular/material/icon';
 import { HomeBookComponent } from './home-book/home-book.component';
 import { CartComponent } from './cart/cart.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent
     HomeBookComponent,
     CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
