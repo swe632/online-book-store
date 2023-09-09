@@ -1,7 +1,7 @@
 .footer{
     width:100%;
     padding:6rem 0;
-    background-color: #7661ec;
+    background-color: whitesmoke;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -42,34 +42,34 @@ line-height:30px;
 
 .social{
     margin-top: 1rem;
-    color: white !important;
+    color: black!important;
 }
 
 h4{
     font-size: 1.2rem;
     padding-bottom: 0.7rem;
-    color: white !important;
+    color: black !important;
 }
 
 p{
-    color: #ffffff !important;
+    color: black !important;
     margin-right: 20px;
 }
 
 
 .home-icon{
-    color:#ffffff ;
+    color:black ;
     margin-right:2rem ;
 }
 
 
 .phone-icon{
-    color:#ffffff ;
+    color:black ;
     margin-right:2rem ;
 }
 
 .email-icon{
-    color:#ffffff ;
+    color:black ;
     margin-right:2rem ;
 }
 

@@ -1,13 +1,22 @@
-.bg-medium-slate-blue {
-  background-color: #7B68EE;
+.nav-bg {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position:fixed;
+    width: 100%;
+    height: 90px;
+    z-index: 10;
 }
 
+.go{
+  background-color: rgba(0, 0, 0, 0.85);
+
+  display:none;
+  transition:0.5s;
+}
 .navbar-brand {
   margin-left: 10px;
-}
-
-.navbar {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link {

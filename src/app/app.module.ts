@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeBookComponent } from './home-book/home-book.component';
 import { CartComponent } from './cart/cart.component';
+import { HeroimageComponent } from './heroimage/heroimage.component';
 
 
 
@@ -17,7 +18,8 @@ import { CartComponent } from './cart/cart.component';
     NavbarComponent,
     FooterComponent,
     HomeBookComponent,
-    CartComponent
+    CartComponent,
+    HeroimageComponent
   ],
   imports: [
     BrowserModule,
