@@ -15,7 +15,7 @@ import { CartComponent } from './cart/cart.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
     HomeBookComponent,
     CartComponent
   ],
