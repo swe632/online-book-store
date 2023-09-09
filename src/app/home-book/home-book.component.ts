@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Book } from '../models/book.model';
+import { CartService } from '../service/cart.service';
+
+
 
 @Component({
   selector: 'app-home-book',
@@ -7,6 +10,21 @@ import { Book } from '../models/book.model';
   styleUrls: ['./home-book.component.css']
 })
 export class HomeBookComponent {
+  constructor(private cartService: CartService) { }
+  message: string = '';
+  showMessage: boolean = false;
+  addToCart(book: Book): void {
+    this.cartService.addToCart(book);
+    this.showMessage = true;
+    this.message = `${book.title} added to cart.`;
+
+    // After a few seconds, hide the message
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 3000);
+
+    console.log(book);
+  }
 
 
   books: Book[] = [
@@ -84,13 +102,11 @@ export class HomeBookComponent {
     // Add more books up to id 25
   ];
 
+ 
 
-  cart:Book[] = []; // Initialize an empty cart
 
-  addToCart(book: Book): void {
-    this.cart.push(book); // Add the selected book to the cart
-    console.log(this.cart)
-  }
 
+ 
+ 
 
 }
