@@ -2,33 +2,26 @@
     <h1>Book Listing</h1>
     <div *ngIf="showMessage" class="alert alert-success">
         {{ message }}
-      </div>
-    <div class="row">
-        
-
-        <ng-container *ngFor="let c of books">
-        <div class="col-md-2 mb-3">
-            <div class="card " style="width: 16rem;">
-                <img src="assets/book1.jpg" class="card-img-top" alt="Book 1" >
-                <div class="card-body">
-                    <h5 class="card-title">{{c.title}}</h5>
-                    <p class="card-text">Author: {{c.author}}</p>
-                    <p class="card-text">Price: ${{c.price}}</p>
-                </div>
-                    <div class="card-body">
-                    <a class="btn btn-primary" (click)="addToCart(c)">Add to Cart</a>&nbsp;
-
-                    <a class="btn btn-primary">Details</a>
-                    </div>
-                
-            </div>
-        </div>
-        <div class="col-md-1">
-            
-        </div>
-    </ng-container>
-        <!-- Add more book cards here -->
     </div>
-    
-</div>
+    <div class="row">
+        <ng-container *ngFor="let c of books">
+            <div class="col-md-2 mb-3">
+                <div class="card " style="width: 16rem;">
+                    <img src="assets/book1.jpg" class="card-img-top" alt="Book 1">
+                    <div class="card-body">
+                        <h5 class="card-title">{{c.title}}</h5>
+                        <p class="card-text">Author: {{c.author}}</p>
+                        <p class="card-text">Price: ${{c.price}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a class="btn btn-primary" (click)="addToCart(c)">Add to Cart</a>&nbsp;
+                        <a class="btn btn-primary" (click)="viewProductDetails(c.id)">Details</a>
+                    </div>
 
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </ng-container>
+    </div>
+</div>

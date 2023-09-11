@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../models/book.model';
 import { CartService } from '../service/cart.service';
+import { Router } from '@angular/router';
 
 
 
@@ -10,9 +11,10 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./home-book.component.css']
 })
 export class HomeBookComponent {
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
   message: string = '';
   showMessage: boolean = false;
+  
   addToCart(book: Book): void {
     this.cartService.addToCart(book);
     this.showMessage = true;
@@ -104,7 +106,9 @@ export class HomeBookComponent {
 
  
 
-
+  viewProductDetails(id: number) {
+    this.router.navigateByUrl('/product/' + id);
+  }
 
  
  

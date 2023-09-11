@@ -13,7 +13,7 @@
       <tr *ngFor="let book of cart">
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
-        <td>{{ book.price  }}</td>
+        <td>{{ book.price }}</td>
         <td>
           <button class="btn btn-danger" (click)="removeFromCart(book)">Remove</button>
         </td>
@@ -21,4 +21,8 @@
     </tbody>
   </table>
   <p>Total Price: {{ totalPrice | currency }}</p>
+  <div *ngIf="showMessage" class="alert alert-success">
+    {{ message }}
+  </div>
+  <button class="btn btn-outline-primary" (click)="checkout()" [disabled]="cart.length==0">checkout</button>
 </div>
