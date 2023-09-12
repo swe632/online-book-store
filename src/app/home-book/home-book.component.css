@@ -1,4 +1,10 @@
 .heading{
     text-align: center;
-    padding: 4rem 0 2rem 0;
+    padding-top:3%;
+    padding-bottom:4%;
+}
+
+.listing{
+
+    padding-bottom: 5%;
 }
