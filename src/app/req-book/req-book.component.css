@@ -22,3 +22,17 @@ button {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+
+
+.pad{
+    padding-bottom: 2%;
+    
+      }
+
+
+      .heading{
+        text-align: center;
+        padding-top:4%;
+        padding-bottom:2%;
+    }
