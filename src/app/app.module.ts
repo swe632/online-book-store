@@ -10,6 +10,10 @@ import { HomeBookComponent } from './home-book/home-book.component';
 import { CartComponent } from './cart/cart.component';
 import { HeroimageComponent } from './heroimage/heroimage.component';
 
+import { ReqBookComponent } from './req-book/req-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,12 +23,16 @@ import { HeroimageComponent } from './heroimage/heroimage.component';
     FooterComponent,
     HomeBookComponent,
     CartComponent,
-    HeroimageComponent
+    HeroimageComponent,
+    ReqBookComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

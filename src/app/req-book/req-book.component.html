@@ -1,0 +1,35 @@
+<app-heroimage></app-heroimage>
+
+<div class="container">
+    <h1>Request a Book</h1> <br>
+    <form #myForm="ngForm" [formGroup]="reqBook" (ngSubmit)="saveBook(myForm.value)">
+        <div class="form-group">
+            <label for="username">Username</label> <br>
+            <input class="form-control" type="text" formControlName="username" ngModel>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="bookname">Book Name</label> <br>
+            <input class="form-control" type="text" formControlName="bookname" ngModel>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="author">Author</label> <br>
+            <input class="form-control" type="text" formControlName="author" ngModel>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="bookedition">Book Edition</label> <br>
+            <input class="form-control" type="number" formControlName="bookedition" ngModel> <br>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Request Book</button>
+        </div>
+    </form>
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Book Requested!</strong> We will reach you with an update soon.
+        <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+    <br>
+</div>
