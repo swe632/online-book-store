@@ -20,10 +20,10 @@ export class NavbarComponent implements OnInit {
     let isthere=myTag.classList.contains('nav-bg');
     
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (number > 100) {
+    if (number > 50) {
       myTag.classList.add("go");
 
-    } else if (number < 100) {
+    } else if (number < 50) {
         myTag.classList.remove("go");
 
     }
