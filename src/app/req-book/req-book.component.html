@@ -1,6 +1,6 @@
 <div class="container">
-    <h1>Request a Book</h1> <br>
-    <form #myForm="ngForm" [formGroup]="reqBook" (ngSubmit)="saveBook(myForm.value)">
+    <h1 class="heading">Request a Book</h1> <br>
+    <form #myForm="ngForm" [formGroup]="reqBook" (ngSubmit)="saveBook(myForm.value)" class="pad">
         <div class="form-group">
             <label for="username">Username</label> <br>
             <input class="form-control" type="text" formControlName="username" ngModel>
