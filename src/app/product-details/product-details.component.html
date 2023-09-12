@@ -1,14 +1,17 @@
-<div class="product-details">
-  <div class="product-image">
-    <img src="assets/book1.jpg" alt="{{ product.title }}" />
-  </div>
-  <div class="product-info">
-    <h2>{{ product.title }}</h2>
-    <p>Author: {{ product.author }}</p>
-    <p>Price: ${{ product.price }}</p>
-    <div *ngIf="showMessage" class="alert alert-success">
-      {{ message }}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 product-image" style="width: 16rem;">
+      <img src="assets/book1.jpg" alt="{{ product.title }}" class="img-fluid" />
     </div>
-    <button (click)="addToCart(product)" class="btn btn-outline-primary">Add to Cart</button>
+    <div class="col-md-8 product-info">
+      <h2>{{ product.title }}</h2>
+      <p>Author: {{ product.author }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <div *ngIf="showMessage" class="alert alert-success">
+        {{ message }}
+      </div>
+      <button (click)="addToCart(product)" class="btn btn-primary">Add to Cart</button>
+    </div>
   </div>
 </div>
+<br>

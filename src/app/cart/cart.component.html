@@ -24,5 +24,6 @@
   <div *ngIf="showMessage" class="alert alert-success">
     {{ message }}
   </div>
-  <button class="btn btn-outline-primary" (click)="checkout()" [disabled]="cart.length==0">checkout</button>
+  <button class="btn btn-primary" (click)="checkout()" [disabled]="cart.length==0">checkout</button>
 </div>
+<br>
