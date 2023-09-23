@@ -6,8 +6,8 @@
     <div class="row">
         <ng-container *ngFor="let c of books">
             <div class="col-md-2 mb-3">
-                <div class="card clickable-card" (click)="viewProductDetails(c.id)" style="width: 16rem;">
-                    <img src="assets/book1.jpg" class="card-img-top" alt="Book 1">
+                <div class="card clickable-card" style="width: 16rem;">
+                    <img src="assets/book1.jpg" (click)="viewProductDetails(c.id)"  class="card-img-top" alt="Book 1">
                     <div class="card-body">
                         <h5 class="card-title">{{c.title}}</h5>
                         <p class="card-text">Author: {{c.author}}</p>
