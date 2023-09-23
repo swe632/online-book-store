@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .nav-link {
@@ -20,4 +20,8 @@
 .navbar-brand {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.nv-stick{
+  position:fixed;
 }
