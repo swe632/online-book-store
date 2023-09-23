@@ -20,11 +20,9 @@ export class HomeBookComponent {
     this.cartService.addToCart(book);
     this.showMessage = true;
     this.message = `${book.title} added to cart.`;
-
+    this.router.navigateByUrl('/cart/');
     // After a few seconds, hide the message
-    setTimeout(() => {
-      this.showMessage = false;
-    }, 3000);
+    
 
     console.log(book);
   }
