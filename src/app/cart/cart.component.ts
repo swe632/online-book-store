@@ -20,7 +20,12 @@ export class CartComponent {
     this.cart = this.cartService.getCart();
     this.calculateTotalPrice();
   }
-
+  addToCart(book: Book): void {
+    
+    this.cartService.addToCart(book);
+    this.calculateTotalPrice();
+    console.log(book);
+  }
   removeFromCart(book: Book): void {
     this.cartService.removeFromCart(book);
     this.cart = this.cartService.getCart(); // Update the cart data after removal
@@ -29,7 +34,7 @@ export class CartComponent {
 
   calculateTotalPrice(): void {
     // Calculate the total price of items in the cart
-    this.totalPrice = this.cart.reduce((total, book) => total + book.price, 0);
+    this.totalPrice = this.cart.reduce((total, book) => total + book.price*book.quantity, 0);
   }
 
   checkout() {

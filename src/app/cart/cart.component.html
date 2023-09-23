@@ -6,7 +6,9 @@
         <th>Title</th>
         <th>Author</th>
         <th>Price</th>
-        <th>Action</th>
+        <th>Quantity</th>
+        <!-- <th>Action</th> -->
+
       </tr>
     </thead>
     <tbody>
@@ -15,8 +17,14 @@
         <td>{{ book.author }}</td>
         <td>{{ book.price }}</td>
         <td>
-          <button class="btn btn-danger" (click)="removeFromCart(book)">Remove</button>
+          <button class="btn btn-danger" (click)="removeFromCart(book)">-</button>
+          {{ book.quantity }}
+          <button class="btn btn-success" (click)="addToCart(book)">+</button>
+         
         </td>
+        <!-- <td>
+          <button class="btn btn-danger" (click)="removeFromCart(book)">Remove</button>
+        </td> -->
       </tr>
     </tbody>
   </table>

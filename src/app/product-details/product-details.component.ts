@@ -24,6 +24,7 @@ export class ProductDetailsComponent {
     author: '',
     price: 0,
     image: '',
+    quantity: 0,
   };
 
   ngOnInit(): void {

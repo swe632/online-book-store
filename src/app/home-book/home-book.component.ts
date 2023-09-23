@@ -17,6 +17,7 @@ export class HomeBookComponent {
   
 
   addToCart(book: Book): void {
+    
     this.cartService.addToCart(book);
     this.showMessage = true;
     this.message = `${book.title} added to cart.`;
@@ -36,6 +37,7 @@ export class HomeBookComponent {
       author: 'Author Name 1',
       price: 19.99,
       image: 'book1.jpg',
+      quantity: 100
     },
     {
       id: 2,
@@ -43,6 +45,7 @@ export class HomeBookComponent {
       author: 'Author Name 2',
       price: 24.99,
       image: 'book2.jpg',
+      quantity: 100
     },
     {
       id: 3,
@@ -50,6 +53,7 @@ export class HomeBookComponent {
       author: 'Author Name 3',
       price: 14.99,
       image: 'book3.jpg',
+      quantity: 100
     },
     // Add more books here
     {
@@ -58,6 +62,7 @@ export class HomeBookComponent {
       author: 'Author Name 4',
       price: 15.99,
       image: 'book4.jpg',
+      quantity: 100
     },
     {
       id: 5,
@@ -65,6 +70,7 @@ export class HomeBookComponent {
       author: 'Author Name 5',
       price: 29.99,
       image: 'book5.jpg',
+      quantity: 100
     },
     {
       id: 6,
@@ -72,6 +78,7 @@ export class HomeBookComponent {
       author: 'Author Name 6',
       price: 12.99,
       image: 'book6.jpg',
+      quantity: 100
     },
     {
       id: 7,
@@ -79,6 +86,7 @@ export class HomeBookComponent {
       author: 'Author Name 7',
       price: 17.49,
       image: 'book7.jpg',
+      quantity: 100
     },
     {
       id: 8,
@@ -86,6 +94,7 @@ export class HomeBookComponent {
       author: 'Author Name 8',
       price: 22.99,
       image: 'book8.jpg',
+      quantity: 100
     },
     {
       id: 9,
@@ -93,6 +102,7 @@ export class HomeBookComponent {
       author: 'Author Name 9',
       price: 18.99,
       image: 'book9.jpg',
+      quantity: 100
     },
     {
       id: 10,
@@ -100,6 +110,7 @@ export class HomeBookComponent {
       author: 'Author Name 10',
       price: 14.99,
       image: 'book10.jpg',
+      quantity: 100
     },
     // Add more books up to id 25
   ];
