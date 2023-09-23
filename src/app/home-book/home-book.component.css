@@ -8,3 +8,6 @@
 
     padding-bottom: 5%;
 }
+.clickable-card {
+    cursor: pointer;
+  }
