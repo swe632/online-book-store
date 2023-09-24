@@ -13,21 +13,53 @@ export class CartComponent {
   totalPrice: number = 0;
   message: string = '';
   showMessage: boolean = false;
+  selectedBooks: Book[] = [];
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cart = this.cartService.getCart();
+    this.cart.forEach((book: Book) => {
+      if(book.selected) {
+        this.selectedBooks.push(book);
+      }
+    });
     this.calculateTotalPrice();
   }
-  addToCart(book: Book): void {
-    
+
+  selectItem(book: any) {
+    book.selected = !book.selected;
+
+    if(book.selected) {
+      this.selectedBooks.push(book);
+    } else {
+      this.selectedBooks.splice(this.selectedBooks.indexOf(book), 1);
+    }
+  }
+
+  removeItemsFromCart() {
+    this.selectedBooks.forEach((book : Book) => {
+      this.deleteFromCart(book);
+    });
+    this.selectedBooks = [];
+  }
+
+  addToCart(book: Book): void {  
     this.cartService.addToCart(book);
     this.calculateTotalPrice();
-    console.log(book);
   }
+
   removeFromCart(book: Book): void {
     this.cartService.removeFromCart(book);
+    this.cart = this.cartService.getCart(); // Update the cart data after removal
+    this.calculateTotalPrice();
+    if(this.cart.length == 0) {
+      this.selectedBooks = [];
+    }
+  }
+
+  deleteFromCart(book: Book): void {
+    this.cartService.deleteFromCart(book);
     this.cart = this.cartService.getCart(); // Update the cart data after removal
     this.calculateTotalPrice();
   }

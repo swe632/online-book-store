@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Product, ProductService } from '../service/product.service';
+import { ProductService } from '../service/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../service/cart.service';
+import { Book } from '../models/book.model';
 
 @Component({
   selector: 'app-product-details',
@@ -18,13 +19,14 @@ export class ProductDetailsComponent {
   message: string = '';
   showMessage: boolean = false;
 
-  product: Product = {
+  product: Book = {
     id: 0,
     title: '',
     author: '',
     price: 0,
     image: '',
     quantity: 0,
+    selected: false
   };
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class ProductDetailsComponent {
       this.product = product;
     });
   }
-  addToCart(product: Product) {
+  addToCart(product: Book) {
     this.cartService.addToCart(product);
     this.showMessage = true;
     this.message = `${product.title} added to cart.`;

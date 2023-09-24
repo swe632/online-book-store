@@ -11,21 +11,29 @@ export class CartService {
 
   addToCart(book: Book): void {
     //this.cart.push(book);
-    const existingBook = this.cart.find((item) => item.id === book.id); 
-    if (existingBook) 
-    { existingBook.quantity += 1; // Increment quantity if book is already in the cart 
-  } else { book.quantity = 1; // Set quantity to 1 for a new item 
-  this.cart.push(book);
- }
-
+    const existingBook = this.cart.find((item) => item.id === book.id);
+    if (existingBook) {
+      existingBook.quantity += 1; // Increment quantity if book is already in the cart
+    } else {
+      book.quantity = 1; // Set quantity to 1 for a new item
+      this.cart.push(book);
+    }
   }
 
   getCart(): Book[] {
     return this.cart;
   }
 
+  deleteFromCart(book: Book): void {
+    const existingBook = this.cart.find((item) => item.id === book.id);
+    if (existingBook && existingBook.quantity > 0) {
+        existingBook.quantity = 0; 
+        const index = this.cart.indexOf(existingBook);
+        this.cart.splice(index, 1); 
+    }
+  }
+
   removeFromCart(book: Book): void {
-    const index = this.cart.findIndex((item) => item.id === book.id);
     const existingBook = this.cart.find((item) => item.id === book.id);
 
     if (existingBook) {
@@ -35,8 +43,6 @@ export class CartService {
         const index = this.cart.indexOf(existingBook);
         this.cart.splice(index, 1); // Remove the item if quantity is 1
       }
-
-   
+    }
   }
-}
 }

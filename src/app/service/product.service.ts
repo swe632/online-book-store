@@ -1,15 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, filter, map, of } from 'rxjs';
+import { Book } from '../models/book.model';
 
-export interface Product {
-  id: number;
-  title: string;
-  author: string;
-  price: number;
-  image: string;
-  quantity:number;
-}
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +13,8 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   // Fetch a list of products from the backend
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl).pipe(
+  getProducts(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.productsUrl).pipe(
       catchError((error) => {
         console.error('Error loading products from JSON file:', error);
         return of([]); // Return an empty array in case of an error
@@ -30,7 +23,7 @@ export class ProductService {
   }
 
   // Fetch details of a specific product by its ID
-  getProductById(productId: number): Observable<Product> {
+  getProductById(productId: number): Observable<Book> {
     return this.getProducts().pipe(
       map((products: any[]) =>
         products.find((product) => product.id === productId)
@@ -39,7 +32,7 @@ export class ProductService {
   }
 
   // Add a product to the shopping cart
-  addToCart(product: Product): void {
+  addToCart(product: Book): void {
     // Implement cart logic here
   }
 
