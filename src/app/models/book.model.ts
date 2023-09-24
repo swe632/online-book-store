@@ -5,4 +5,5 @@ export interface Book {
     price: number;
     image: string;
     quantity: number;
+    selected: boolean;
   }
