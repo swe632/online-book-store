@@ -36,3 +36,12 @@ button {
         padding-top:4%;
         padding-bottom:2%;
     }
+
+input.ng-invalid.ng-touched{
+    border: red 2px solid;
+}
+
+span{
+    color: red;
+    font-size: small;
+}
