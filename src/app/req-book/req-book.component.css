@@ -25,23 +25,22 @@ button {
 
 
 
-.pad{
+.pad {
     padding-bottom: 2%;
-    
-      }
+}
 
 
-      .heading{
-        text-align: center;
-        padding-top:4%;
-        padding-bottom:2%;
-    }
+.heading {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
 
-input.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched {
     border: red 2px solid;
 }
 
-span{
+span {
     color: red;
     font-size: small;
 }
