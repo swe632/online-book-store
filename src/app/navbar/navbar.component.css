@@ -25,3 +25,19 @@
 .nv-stick{
   position:fixed;
 }
+
+
+.nav-item-right {
+  margin-left: 700px; 
+}
+
+
+@media (max-width: 767px) {
+  .nav-item-right {
+    margin-left: 0px; 
+  }
+}
+
+
+
+
