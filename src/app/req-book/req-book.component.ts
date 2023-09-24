@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-req-book',
@@ -7,12 +7,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./req-book.component.css'],
 })
 export class ReqBookComponent {
-  constructor() {}
+  constructor() { }
   reqBook = new FormGroup({
-    username: new FormControl(''),
-    bookname: new FormControl(''),
-    author: new FormControl(''),
-    bookedition: new FormControl(''),
+    emailid: new FormControl('', [Validators.required, Validators.email]),
+    bookname: new FormControl('', [Validators.required]),
+    author: new FormControl('', [Validators.required, Validators.pattern("[a-zA-Z].*")]),
+    bookedition: new FormControl('', [Validators.required, Validators.maxLength(2)]),
   });
 
   message: boolean = false;
@@ -23,5 +23,17 @@ export class ReqBookComponent {
   }
   removeMessage() {
     this.message = false;
+  }
+  get emailid() {
+    return this.reqBook.get('emailid');
+  }
+  get bookname() {
+    return this.reqBook.get('bookname');
+  }
+  get author() {
+    return this.reqBook.get('author');
+  }
+  get bookedition() {
+    return this.reqBook.get('bookedition');
   }
 }
