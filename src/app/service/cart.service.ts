@@ -45,4 +45,8 @@ export class CartService {
       }
     }
   }
+
+  deleteAllFromCart() {
+    this.cart = [];
+  }
 }

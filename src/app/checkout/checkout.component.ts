@@ -50,6 +50,7 @@ export class CheckoutComponent {
   placeOrder() {
     if (this.orderForm.valid) {
       this.cart = [];
+      this.cartService.deleteAllFromCart();
       this.totalPrice = 0;
       this.showMessage = true;
       this.message = 'Thank you for shopping.';
@@ -65,7 +66,7 @@ export class CheckoutComponent {
         this.modalClose.nativeElement.click();
         this.router.navigateByUrl("/home");
       }
-    }, 3000);
+    }, 1500);
   }
 
   calculateTotalPrice(): void {
