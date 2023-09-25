@@ -20,12 +20,13 @@
     </button>
   </div>
 
-  <!-- Message -->
   <div *ngIf="showMessage" class="alert alert-success mt-3">
     {{ message }}
   </div>
+
   <!-- Cart Items -->
   <ng-container *ngIf="cart.length > 0; else noItems">
+    <div class="container mt-5 content-pad">
     <!-- Display cart items here as shown in the previous response -->
     <div *ngFor="let book of cart" class="card mt-3 mb-3" (click)="selectItem(book)">
       <div class="row no-gutters">
@@ -65,12 +66,15 @@
         </div>
       </div>
     </div>
+    </div>
   </ng-container>
 
   <!-- No Items Message -->
   <ng-template #noItems>
-    <div class="text-center">
-      <strong>No items in the cart</strong>
+    <div class="container mt-5 pad">
+      <div class="text-center">
+        <strong>No items in the cart</strong>
+      </div>
     </div>
   </ng-template>
 

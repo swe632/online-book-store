@@ -1,10 +1,7 @@
-.pad{
-    padding-top: 2%;
-    padding-bottom:20%;
+.pad {
+  padding-bottom: 420px; /* Adjust this value as needed */
 }
 
-.heading{
-    text-align: left;
-    padding-top:1%;
-    padding-bottom:1%;
+.content-pad {
+    padding-bottom: 240px;
 }
