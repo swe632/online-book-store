@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Book } from '../models/book.model';
 import { CartService } from '../service/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -15,12 +16,15 @@ export class CartComponent {
   showMessage: boolean = false;
   selectedBooks: Book[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService, 
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.cart = this.cartService.getCart();
     this.cart.forEach((book: Book) => {
-      if(book.selected) {
+      if (book.selected) {
         this.selectedBooks.push(book);
       }
     });
@@ -30,7 +34,7 @@ export class CartComponent {
   selectItem(book: any) {
     book.selected = !book.selected;
 
-    if(book.selected) {
+    if (book.selected) {
       this.selectedBooks.push(book);
     } else {
       this.selectedBooks.splice(this.selectedBooks.indexOf(book), 1);
@@ -38,13 +42,13 @@ export class CartComponent {
   }
 
   removeItemsFromCart() {
-    this.selectedBooks.forEach((book : Book) => {
+    this.selectedBooks.forEach((book: Book) => {
       this.deleteFromCart(book);
     });
     this.selectedBooks = [];
   }
 
-  addToCart(book: Book): void {  
+  addToCart(book: Book): void {
     this.cartService.addToCart(book);
     this.calculateTotalPrice();
   }
@@ -53,7 +57,7 @@ export class CartComponent {
     this.cartService.removeFromCart(book);
     this.cart = this.cartService.getCart(); // Update the cart data after removal
     this.calculateTotalPrice();
-    if(this.cart.length == 0) {
+    if (this.cart.length == 0) {
       this.selectedBooks = [];
     }
   }
@@ -66,19 +70,23 @@ export class CartComponent {
 
   calculateTotalPrice(): void {
     // Calculate the total price of items in the cart
-    this.totalPrice = this.cart.reduce((total, book) => total + book.price*book.quantity, 0);
+    this.totalPrice = this.cart.reduce(
+      (total, book) => total + book.price * book.quantity,
+      0
+    );
   }
 
   checkout() {
-    this.cart = [];
-    this.totalPrice = 0;
-    this.showMessage = true;
-    this.message = 'Thank you for shopping.';
+    this.router.navigateByUrl('/checkout');
+    // this.cart = [];
+    // this.totalPrice = 0;
+    // this.showMessage = true;
+    // this.message = 'Thank you for shopping.';
 
-    // After a few seconds, hide the message
-    setTimeout(() => {
-      this.showMessage = false;
-      this.message = '';
-    }, 3000);
+    // // After a few seconds, hide the message
+    // setTimeout(() => {
+    //   this.showMessage = false;
+    //   this.message = '';
+    // }, 3000);
   }
 }

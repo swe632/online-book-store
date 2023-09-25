@@ -12,6 +12,7 @@ import { ReqBookComponent } from './req-book/req-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeBookComponent,
     CartComponent,
     ReqBookComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
