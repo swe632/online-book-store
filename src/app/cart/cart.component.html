@@ -85,14 +85,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Place Order</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
         <button type="button" class="btn-close" #modalClose data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" *ngIf="removeAll">
         Are you sure, you want to remove the selected items?
       </div>
       <div class="modal-body" *ngIf="!removeAll">
-        Are you sure, you want to remove the items?
+        Are you sure, you want to remove the item {{deleteBook.title}}?
       </div>
       <div *ngIf="showMessage" class="alert alert-success mt-3">
         {{ message }}
