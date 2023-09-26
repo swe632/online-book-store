@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { Book } from '../models/book.model';
 import { CartService } from '../service/cart.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,9 @@ export class CartComponent {
   message: string = '';
   showMessage: boolean = false;
   selectedBooks: Book[] = [];
+  removeAll: boolean = false;
+  deleteBook!: Book;
+  @ViewChild('modalClose') modalClose: any;
 
   constructor(
     private cartService: CartService, 
@@ -43,7 +46,10 @@ export class CartComponent {
 
   removeItemsFromCart() {
     this.selectedBooks.forEach((book: Book) => {
-      this.deleteFromCart(book);
+      this.cartService.deleteFromCart(book);
+      this.cart = this.cartService.getCart(); // Update the cart data after removal
+      this.calculateTotalPrice();
+      this.modalClose.nativeElement.click();
     });
     this.selectedBooks = [];
   }
@@ -62,10 +68,12 @@ export class CartComponent {
     }
   }
 
-  deleteFromCart(book: Book): void {
-    this.cartService.deleteFromCart(book);
+  deleteFromCart(): void {
+    this.cartService.deleteFromCart(this.deleteBook);
     this.cart = this.cartService.getCart(); // Update the cart data after removal
     this.calculateTotalPrice();
+    this.modalClose.nativeElement.click();
+
   }
 
   calculateTotalPrice(): void {
