@@ -13,6 +13,8 @@ export class HomeBookComponent {
   message: string = '';
   showMessage: boolean = false;
   books: Book[] | undefined;
+  searchText: string = ''; 
+  filteredBooks: Book[] | undefined;
 
   constructor(
     private cartService: CartService,
@@ -23,7 +25,9 @@ export class HomeBookComponent {
   ngOnInit(): void {
     this.productService.getProducts().subscribe((product) => {
       this.books = product;
+      this.filteredBooks = this.books;
     });
+
   }
 
   addToCart(book: Book): void {
@@ -40,4 +44,16 @@ export class HomeBookComponent {
   viewProductDetails(id: number) {
     this.router.navigateByUrl('/product/' + id);
   }
+
+  onSearchChange(): void
+   {
+    if (this.searchText === '')
+     { 
+      this.filteredBooks = this.books; 
+    }
+     else { 
+      this.filteredBooks = this.books?.filter((book) => book.title.toLowerCase().includes(this.searchText.toLowerCase()) ); 
+    }
+     }
+
 }
