@@ -37,11 +37,18 @@ export class ProductDetailsComponent {
       this.product = product;
     });
   }
-  addToCart(product: Book) {
+
+  addToCart(product: Book, isCheckout: boolean) {
     this.cartService.addToCart(product);
     this.showMessage = true;
     this.message = `${product.title} added to cart.`;
-    this.router.navigateByUrl('/cart');
+
+    if(!isCheckout){
+      this.router.navigateByUrl('/cart');
+    }else if(isCheckout){
+      this.router.navigateByUrl('/checkout');
+    }
+  
     // After a few seconds, hide the message
     setTimeout(() => {
       this.showMessage = false;

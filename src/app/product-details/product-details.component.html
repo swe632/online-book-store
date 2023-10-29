@@ -10,8 +10,12 @@
       <div *ngIf="showMessage" class="alert alert-success">
         {{ message }}
       </div>
-      <button (click)="addToCart(product)" class="btn btn-primary">Add to Cart</button>
+      <button (click)="addToCart(product,false)" class="btn btn-primary">Add to Cart</button>
+      <div class="checkout-button mt-3 d-flex justify-content-left"> 
+        <button class="btn btn-primary" (click)="addToCart(product,true)"> Buy Now </button> 
+      </div>
     </div>
+    
   </div>
 </div>
 <br>
