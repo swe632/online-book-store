@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../service/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../service/cart.service';
 import { Book } from '../models/book.model';
 
@@ -12,6 +12,7 @@ import { Book } from '../models/book.model';
 export class ProductDetailsComponent {
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private productService: ProductService,
     private cartService: CartService
   ) {}
@@ -40,7 +41,7 @@ export class ProductDetailsComponent {
     this.cartService.addToCart(product);
     this.showMessage = true;
     this.message = `${product.title} added to cart.`;
-
+    this.router.navigateByUrl('/cart');
     // After a few seconds, hide the message
     setTimeout(() => {
       this.showMessage = false;

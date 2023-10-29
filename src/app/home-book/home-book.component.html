@@ -3,8 +3,11 @@
     <div *ngIf="showMessage" class="alert alert-success">
         {{ message }}
     </div>
+    <div class="form-group"> <input type="text" class="form-control" placeholder="Search for a book..." [(ngModel)]="searchText" (input)="onSearchChange()"> </div>
+    <br>
     <div class="row">
-        <ng-container *ngFor="let c of books">
+        <ng-container *ngFor="let c of filteredBooks">
+        <!-- <ng-container *ngFor="let c of books"> -->
             <div class="col-md-2 mb-3">
                 <div class="card clickable-card" style="width: 16rem;">
                     <img src="assets/book1.jpg" (click)="viewProductDetails(c.id)"  class="card-img-top" alt="Book 1">
