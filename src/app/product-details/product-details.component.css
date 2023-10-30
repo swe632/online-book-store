@@ -5,3 +5,7 @@
 .pad-top{
     padding-top: 5%;
 }
+
+.rounded-corners {
+    border-radius: 25px;
+}

@@ -9,4 +9,8 @@
 }
 .clickable-card {
     cursor: pointer;
-  }
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
