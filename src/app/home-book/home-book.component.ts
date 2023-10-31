@@ -12,9 +12,9 @@ import { ProductService } from '../service/product.service';
 export class HomeBookComponent {
   message: string = '';
   showMessage: boolean = false;
-  books: Book[] | undefined;
+  books: Book[] = [];
   searchText: string = ''; 
-  filteredBooks: Book[] | undefined;
+  filteredBooks: Book[] = [];
 
   constructor(
     private cartService: CartService,
@@ -24,7 +24,7 @@ export class HomeBookComponent {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((product) => {
-      this.books = product;
+      this.books = product || [];
       this.filteredBooks = this.books;
     });
 
