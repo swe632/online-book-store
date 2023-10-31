@@ -48,4 +48,8 @@ export class ProductDetailsComponent {
       this.message = '';
     }, 3000);
   }
+
+  buyNow(book: Book): void { // Add the selected book to the cart 
+    this.addToCart(book); // Redirect the user to the checkout page 
+    this.router.navigateByUrl('/checkout'); }
 }
