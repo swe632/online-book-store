@@ -19,7 +19,7 @@
   <!-- Cart Items -->
   <ng-container *ngIf="cart.length > 0; else noItems">
     <div class="container mt-5 content-pad">
-      <div class="alert alert-info"> Note:  Use checkboxes to select multiple items for removal. </div>
+      <div class="alert alert-info"> Note: Use checkboxes to select multiple items for removal. </div>
       <div *ngFor="let book of cart" class="card mt-3" [ngClass]="{'border-danger': book.selected}">
         <div class="row no-gutters">
           <div class="col-md-4">
