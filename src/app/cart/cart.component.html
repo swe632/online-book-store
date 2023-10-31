@@ -1,6 +1,8 @@
 <div class="container mt-5 padding-header">
   <h1 class="heading">Cart</h1>
+  
 
+   
 
   <div class="checkout-button mt-3" *ngIf="selectedBooks.length > 0">
     <p class="text-danger">Selecte Items will be removed, to checkout deselect all the items!</p>
@@ -17,7 +19,7 @@
   <!-- Cart Items -->
   <ng-container *ngIf="cart.length > 0; else noItems">
     <div class="container mt-5 content-pad">
-      <div class="alert alert-info"> Note:  Use checkboxes to select multiple items for removal. </div>
+      <div class="alert alert-info"> Note: Use checkboxes to select multiple items for removal. </div>
       <div *ngFor="let book of cart" class="card mt-3" [ngClass]="{'border-danger': book.selected}">
         <div class="row no-gutters">
           <div class="col-md-4">
@@ -77,11 +79,6 @@
       </div>
     </div>
   </ng-template>
-
-    <!-- Checkout Button -->
-    <div class="mt-3 d-flex" *ngIf="selectedBooks.length == 0">
-      <button class="btn btn-primary" (click)="checkout()" [disabled]="cart.length == 0">Checkout</button>
-    </div>
 
 </div>
 
